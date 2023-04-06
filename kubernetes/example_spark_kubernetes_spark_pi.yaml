@@ -22,36 +22,29 @@ metadata:
   name: "spark-pi-{{ ds }}-{{ task_instance.try_number }}"
   namespace: workplace
 spec:
-  type: Scala
+  type: Python
+  pythonVersion: "3"
   mode: cluster
-  image: "gcr.io/spark-operator/spark:v2.4.4"
+  image: "gcr.io/spark-operator/spark-py:v3.1.1"
   imagePullPolicy: Always
-  mainClass: org.apache.spark.examples.SparkPi
-  mainApplicationFile: "local:///opt/spark/examples/jars/spark-examples_2.11-2.4.4.jar"
-  sparkVersion: "2.4.4"
+  mainApplicationFile: local:///opt/spark/examples/src/main/python/pi.py
+  sparkVersion: "3.1.1"
   restartPolicy:
-    type: Never
-  volumes:
-    - name: "test-volume"
-      hostPath:
-        path: "/tmp"
-        type: Directory
+    type: OnFailure
+    onFailureRetries: 3
+    onFailureRetryInterval: 10
+    onSubmissionFailureRetries: 5
+    onSubmissionFailureRetryInterval: 20
   driver:
     cores: 1
     coreLimit: "1200m"
     memory: "512m"
     labels:
-      version: 2.4.4
+      version: 3.1.1
     serviceAccount: spark-spark
-    volumeMounts:
-      - name: "test-volume"
-        mountPath: "/tmp"
   executor:
     cores: 1
     instances: 1
     memory: "512m"
     labels:
-      version: 2.4.4
-    volumeMounts:
-      - name: "test-volume"
-        mountPath: "/tmp"
+      version: 3.1.1
