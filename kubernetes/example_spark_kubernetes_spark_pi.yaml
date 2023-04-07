@@ -20,7 +20,6 @@ apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
   name: "spark-pi-{{ ds }}-{{ task_instance.try_number }}"
-  namespace: workplace
 spec:
   type: Scala
   mode: cluster
