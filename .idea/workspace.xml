@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9234bc4-afe9-4eca-9166-f73e7a06a767" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kubernetes/example_spark_kubernetes.py" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/example_spark_kubernetes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/example_spark_kubernetes_spark_pi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/example_spark_kubernetes_spark_pi.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680826213610</updated>
       <workItem from="1680826214833" duration="373000" />
-      <workItem from="1680827029762" duration="1638000" />
+      <workItem from="1680827029762" duration="1977000" />
     </task>
     <servers />
   </component>
